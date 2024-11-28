@@ -16,6 +16,14 @@ Security Awareness: Identifying unusual network traffic and understanding basic 
 
 
 Steps:
+create a windows virtual machine
+![image](https://github.com/user-attachments/assets/39c08ece-6043-407a-9f22-0c3196abda00)
+
+create a blob storage account
+![image](https://github.com/user-attachments/assets/b44fc8f1-745f-4b1a-afca-be7ea9fae66e)
+
+In Azure navigate to network watcher and select packet capture
+![image](https://github.com/user-attachments/assets/f8afbbf7-4874-4133-b8ba-f972f1a2bce2)
 
 
 

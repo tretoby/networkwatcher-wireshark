@@ -19,7 +19,7 @@ Steps:
 create a windows virtual machine
 ![image](https://github.com/user-attachments/assets/43be03d9-07f0-4402-87d2-b05e6e268c9e)
 
-connecto to virtual machine then navigate to server manager (select add roles)
+connect to to virtual machine then navigate to server manager (select add roles)
 ![image](https://github.com/user-attachments/assets/738e534a-6dd5-451a-b6ed-15b4c2d420a8)
 
 install web server (IIS)
@@ -59,7 +59,7 @@ open wireshark and add downloaded file
 now you can see the contents of the capture file
 ![image](https://github.com/user-attachments/assets/260bebea-7ff2-4074-80f9-94b1959600dd)
 
-now I can filter using the port 80 that I previously used to connect to the virtual machine
+filter using the port 80 that was previously used to connect to the virtual machine. (ip.addr eq **** and port.eq 80)
 ![image](https://github.com/user-attachments/assets/07380a3b-0d28-4d42-9966-d00229377d61)
 
 

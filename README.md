@@ -39,7 +39,7 @@ add resource group, and storage account, then set the time limit to 300 seconds
 navigate to target VM and select extentions to see the networkwatcher extention added to the virtual machine
 ![image](https://github.com/user-attachments/assets/7fd011fa-6e68-4c91-a246-1c4b0c4b8660)
 
-navigate back to network watcher packet capture. The status should say running
+navigate back to network watcher packet capture. The status should say loading while it is capturing the packets
 ![image](https://github.com/user-attachments/assets/abbb4678-8f74-4b00-a870-f61a2d874367)
 
 now open up the web page by using the public ip of virtual machine to drive traffic to the server

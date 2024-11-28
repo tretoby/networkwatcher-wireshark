@@ -23,6 +23,7 @@ connect to to virtual machine then navigate to server manager (select add roles)
 ![image](https://github.com/user-attachments/assets/738e534a-6dd5-451a-b6ed-15b4c2d420a8)
 
 install web server (IIS)
+
 ![image](https://github.com/user-attachments/assets/4db7dd4e-7203-4c03-b6b2-0b8c34d5eb81)
 
 create a blob storage account

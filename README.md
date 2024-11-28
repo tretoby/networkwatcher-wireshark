@@ -59,7 +59,7 @@ open wireshark and add downloaded file
 now you can see the contents of the capture file
 ![image](https://github.com/user-attachments/assets/260bebea-7ff2-4074-80f9-94b1959600dd)
 
-filter using the port 80 that was previously used to connect to the virtual machine. (ip.addr eq **** and port.eq 80)
+filter using the port 80 that was previously used to connect to the virtual machine. filter = (ip.addr eq **** and tcp.port eq 80)
 ![image](https://github.com/user-attachments/assets/07380a3b-0d28-4d42-9966-d00229377d61)
 
 

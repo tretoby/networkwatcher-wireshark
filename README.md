@@ -1,141 +1,106 @@
-# Network Packet Capture and Analysis in Azure
+# Network Packet Capture and Analysis in Azure: Comprehensive Network Forensics Lab
 
-## Project Overview
+## 🌐 Project Overview
 
-This hands-on cybersecurity and networking project demonstrates advanced techniques for network traffic capture and analysis using Microsoft Azure Network Watcher and Wireshark. The comprehensive lab provides practical experience in cloud infrastructure, network monitoring, and security analysis.
+This advanced cybersecurity laboratory demonstrates sophisticated network traffic capture and analysis techniques utilizing Microsoft Azure Network Watcher and Wireshark. The project provides a hands-on approach to understanding network infrastructure, traffic monitoring, and security analysis in cloud environments.
 
-## Objective
+## 🎯 Objective
 
-The primary objectives of this project are to:
-- Demonstrate advanced network monitoring techniques in cloud environments
-- Implement packet capture using Azure Network Watcher
-- Perform in-depth network traffic analysis with Wireshark
-- Develop practical skills in cloud security and network forensics
+The primary goals of this network forensics project are to:
+- Implement advanced network monitoring techniques in cloud infrastructure
+- Leverage Azure Network Watcher for precise packet capture
+- Perform comprehensive network traffic analysis using Wireshark
+- Develop practical skills in cloud security and network investigation
 
-## Skills Developed
+## 🛠 Skills Developed
 
 - **Cloud Infrastructure Management**
-  - Provisioning and configuring Azure Virtual Machines
-  - Managing Virtual Network resources
-  - Understanding cloud networking configurations
+  - Azure Virtual Machine provisioning
+  - Virtual network configuration
+  - Cloud networking principles
 
-- **Network Monitoring**
-  - Configuring Azure Network Watcher
-  - Implementing packet capture techniques
-  - Analyzing network traffic patterns
+- **Network Monitoring Techniques**
+  - Azure Network Watcher configuration
+  - Network traffic capture strategies
+  - Traffic pattern identification
 
-- **Packet Analysis**
+- **Advanced Packet Analysis**
   - Wireshark packet inspection
-  - Protocol-level traffic analysis (TCP/IP, HTTP, DNS)
-  - Identifying network communication characteristics
+  - Protocol-level traffic analysis
+  - Network communication pattern recognition
 
-- **Security Awareness**
-  - Recognizing potential network vulnerabilities
-  - Understanding traffic flow and communication patterns
-  - Basic network forensics and investigation techniques
+- **Cybersecurity Awareness**
+  - Vulnerability detection
+  - Traffic flow analysis
+  - Network forensics fundamentals
 
-## Prerequisites
+## 📋 Prerequisites
 
 - Microsoft Azure Account
-- Active Subscription
-- Windows or Linux Machine with:
-  - Wireshark Installed
-  - Azure CLI or Azure PowerShell (optional)
+- Active Azure Subscription
+- Windows machine with:
+  - Wireshark installed
+  - Remote Desktop client
 
-## Step-by-Step Laboratory Procedure
+## 🚀 Step-by-Step Laboratory Procedure
 
-### 1. Azure Virtual Machine Preparation
+### Step 1: Create Windows Virtual Machine
+![Create Windows VM](https://github.com/user-attachments/assets/43be03d9-07f0-4402-87d2-b05e6e268c9e)
 
-#### 1.1 Create Windows Virtual Machine
-- Navigate to Azure Portal
-- Select "Virtual Machines"
-- Click "Create"
-- Choose Windows Server image
-- Configure network settings
-- Ensure necessary inbound ports are open (80, 443)
+### Step 2: Configure Server Manager
+![Server Manager Configuration](https://github.com/user-attachments/assets/738e534a-6dd5-451a-b6ed-15b4c2d420a8)
 
-#### 1.2 Configure Web Server
-- Connect to Virtual Machine via Remote Desktop
-- Open Server Manager
-- Navigate to "Add Roles and Features"
-- Select and install Internet Information Services (IIS)
+### Step 3: Install Web Server (IIS)
+![Install IIS](https://github.com/user-attachments/assets/4db7dd4e-7203-4c03-b6b2-0b8c34d5eb81)
 
-### 2. Network Monitoring Setup
+### Step 4: Create Blob Storage Account
+![Create Storage Account](https://github.com/user-attachments/assets/6d1add42-9243-48bb-ac08-7243128c5491)
 
-#### 2.1 Create Storage Account
-- Navigate to Azure Portal Storage Accounts
-- Create a new storage account
-- Generate a blob container for storing network captures
+### Step 5: Access Network Watcher
+![Network Watcher](https://github.com/user-attachments/assets/f17a39d4-7ec2-4bdf-9aa1-c726afa5d14a)
 
-#### 2.2 Configure Network Watcher
-- Access Network Watcher in Azure Portal
-- Select "Packet Capture" option
-- Choose target Virtual Machine
-- Configure capture parameters:
-  - Select Storage Account
-  - Set time limit (recommended: 300 seconds)
-  - Define capture filters (optional)
+### Step 6: Configure Packet Capture
+![Packet Capture Configuration](https://github.com/user-attachments/assets/0687cb06-9428-4361-bbb3-32baf02424da)
 
-### 3. Traffic Generation and Capture
+### Step 7: Verify Network Watcher Extension
+![Network Watcher Extension](https://github.com/user-attachments/assets/7fd011fa-6e68-4c91-a246-1c4b0c4b8660)
 
-#### 3.1 Generate Network Traffic
-- Access Virtual Machine's public IP address
-- Open web browser
-- Load IIS default page
-- Perform basic interactions to generate network traffic
+### Step 8: Start Packet Capture
+![Start Packet Capture](https://github.com/user-attachments/assets/abbb4678-8f74-4b00-a870-f61a2d874367)
 
-#### 3.2 Capture Network Packets
-- Return to Network Watcher
-- Stop packet capture
-- Verify capture status and size
+### Step 9: Generate Web Traffic
+![Generate Web Traffic](https://github.com/user-attachments/assets/4354baa8-3135-434f-b84e-d470b6b6052d)
 
-### 4. Packet Analysis with Wireshark
+### Step 10: Stop Packet Capture
+![Stop Packet Capture](https://github.com/user-attachments/assets/4db7dd4e-7203-4c03-b6b2-0b8c34d5eb81)
 
-#### 4.1 Download Capture File
-- Navigate to configured Storage Account
-- Access Storage Browser
-- Locate Network Watcher logs container
-- Download packet capture file
+### Step 11: Access Storage Browser
+![Storage Browser](https://github.com/user-attachments/assets/eca65832-9bd5-4754-8c07-4f537025617b)
 
-#### 4.2 Wireshark Analysis
-- Open Wireshark
-- Load downloaded capture file
-- Apply filters for focused analysis
-  - Example filter: `(ip.addr == <VM_IP> and tcp.port == 80)`
+### Step 12: Download Packet Capture Log
+![Download Capture Log](https://github.com/user-attachments/assets/1a48309b-5653-4434-8c8e-a61b56a961e8)
 
-## Recommended Filters for Investigation
+### Step 13: Open Capture in Wireshark
+![Open in Wireshark](https://github.com/user-attachments/assets/0543a81d-4104-4a78-819b-733ee6014b61)
 
-- `http`: Display HTTP traffic
-- `dns`: Analyze DNS queries
-- `tcp.port == 80`: Web traffic
-- `tcp.port == 443`: HTTPS traffic
+### Step 14: Analyze Packet Contents
+![Packet Analysis](https://github.com/user-attachments/assets/260bebea-7ff2-4074-80f9-94b1959600dd)
 
-## Security Considerations
+### Step 15: Apply Advanced Filtering
+![Apply Filters](https://github.com/user-attachments/assets/07380a3b-0d28-4d42-9966-d00229377d61)
 
-- Always use strong authentication
-- Implement least privilege access
-- Regularly update and patch systems
+## 🔍 Recommended Wireshark Filters
+
+- `http`: HTTP traffic analysis
+- `dns`: DNS query investigation
+- `tcp.port == 80`: Web traffic examination
+- `tcp.port == 443`: Secure web traffic analysis
+- `ip.addr == <YOUR_VM_IP> and tcp.port == 80`: Targeted VM traffic
+
+## 🛡️ Security Considerations
+
+- Implement multi-factor authentication
+- Use principle of least privilege
+- Regularly update cloud resources
 - Monitor and log network activities
-
-🏁 Conclusion
-This network packet capture and analysis project bridges theoretical knowledge with practical cybersecurity skills. By leveraging Azure Network Watcher and Wireshark.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

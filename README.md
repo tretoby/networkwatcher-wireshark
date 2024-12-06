@@ -59,6 +59,7 @@ The primary goals of this network forensics project are to:
 ### Step 5: Access Network Watcher
 ![Network Watcher](https://github.com/user-attachments/assets/f17a39d4-7ec2-4bdf-9aa1-c726afa5d14a)
 
+
 ### Step 6: Configure Packet Capture
 ![Packet Capture Configuration](https://github.com/user-attachments/assets/0687cb06-9428-4361-bbb3-32baf02424da)
 

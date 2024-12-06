@@ -57,7 +57,7 @@ The primary goals of this network forensics project are to:
 ![Create Storage Account](https://github.com/user-attachments/assets/6d1add42-9243-48bb-ac08-7243128c5491)
 
 ### Step 5: Access Network Watcher
-![Network Watcher]![image](https://github.com/user-attachments/assets/f17a39d4-5ec2-4bdf-9aa1-c726afa5d14a)
+![image](https://github.com/user-attachments/assets/f17a39d4-5ec2-4bdf-9aa1-c726afa5d14a)
 
 ### Step 6: Configure Packet Capture
 ![Packet Capture Configuration](https://github.com/user-attachments/assets/0687cb06-9428-4361-bbb3-32baf02424da)

@@ -1,67 +1,124 @@
-**Network Packet Capture in Azure with Network Watcher and Wireshark**
+# Network Packet Capture and Analysis in Azure
 
-Objective
+## Project Overview
 
-This project demonstrates the implementation of network packet capture and analysis using Azure Network Watcher and Wireshark. The goal is to showcase the ability to:
-Configure and utilize Azure Network Watcher for capturing traffic in an Azure Virtual Network.
-Analyze network traffic using Wireshark to identify patterns, potential vulnerabilities, and anomalies.
-Gain hands-on experience in networking, cloud infrastructure, and security monitoring.
+This hands-on cybersecurity and networking project demonstrates advanced techniques for network traffic capture and analysis using Microsoft Azure Network Watcher and Wireshark. The comprehensive lab provides practical experience in cloud infrastructure, network monitoring, and security analysis.
 
-Skills Learned
+## Objective
 
-Azure Cloud Infrastructure Management: Setting up Virtual Machines and Virtual Networks.
-Network Monitoring: Capturing traffic using Azure Network Watcher’s packet capture feature.
-Packet Analysis: Using Wireshark to inspect TCP/IP, HTTP, DNS, and other protocol packets.
-Security Awareness: Identifying unusual network traffic and understanding basic network attack patterns.
+The primary objectives of this project are to:
+- Demonstrate advanced network monitoring techniques in cloud environments
+- Implement packet capture using Azure Network Watcher
+- Perform in-depth network traffic analysis with Wireshark
+- Develop practical skills in cloud security and network forensics
 
+## Skills Developed
 
-Steps:
-create a windows virtual machine
-![image](https://github.com/user-attachments/assets/43be03d9-07f0-4402-87d2-b05e6e268c9e)
+- **Cloud Infrastructure Management**
+  - Provisioning and configuring Azure Virtual Machines
+  - Managing Virtual Network resources
+  - Understanding cloud networking configurations
 
-connect to to virtual machine then navigate to server manager (select add roles)
-![image](https://github.com/user-attachments/assets/738e534a-6dd5-451a-b6ed-15b4c2d420a8)
+- **Network Monitoring**
+  - Configuring Azure Network Watcher
+  - Implementing packet capture techniques
+  - Analyzing network traffic patterns
 
-install web server (IIS)
+- **Packet Analysis**
+  - Wireshark packet inspection
+  - Protocol-level traffic analysis (TCP/IP, HTTP, DNS)
+  - Identifying network communication characteristics
 
-![image](https://github.com/user-attachments/assets/4db7dd4e-7203-4c03-b6b2-0b8c34d5eb81)
+- **Security Awareness**
+  - Recognizing potential network vulnerabilities
+  - Understanding traffic flow and communication patterns
+  - Basic network forensics and investigation techniques
 
-create a blob storage account
-![image](https://github.com/user-attachments/assets/6d1add42-9243-48bb-ac08-7243128c5491)
+## Prerequisites
 
+- Microsoft Azure Account
+- Active Subscription
+- Windows or Linux Machine with:
+  - Wireshark Installed
+  - Azure CLI or Azure PowerShell (optional)
 
-In Azure navigate to network watcher and select packet capture
-![image](https://github.com/user-attachments/assets/f17a39d4-5ec2-4bdf-9aa1-c726afa5d14a)
+## Step-by-Step Laboratory Procedure
 
-add resource group, and storage account, then set the time limit to 300 seconds
-![image](https://github.com/user-attachments/assets/0687cb06-9428-4361-bbb3-32baf02424da)
+### 1. Azure Virtual Machine Preparation
 
-navigate to target VM and select extentions to see the networkwatcher extention added to the virtual machine
-![image](https://github.com/user-attachments/assets/7fd011fa-6e68-4c91-a246-1c4b0c4b8660)
+#### 1.1 Create Windows Virtual Machine
+- Navigate to Azure Portal
+- Select "Virtual Machines"
+- Click "Create"
+- Choose Windows Server image
+- Configure network settings
+- Ensure necessary inbound ports are open (80, 443)
 
-navigate back to network watcher packet capture. The status should say loading while it is capturing the packets
-![image](https://github.com/user-attachments/assets/abbb4678-8f74-4b00-a870-f61a2d874367)
+#### 1.2 Configure Web Server
+- Connect to Virtual Machine via Remote Desktop
+- Open Server Manager
+- Navigate to "Add Roles and Features"
+- Select and install Internet Information Services (IIS)
 
-now open up the web page by using the public ip of virtual machine to drive traffic to the server
-![image](https://github.com/user-attachments/assets/4354baa8-3135-434f-b84e-d470b6b6052d)
+### 2. Network Monitoring Setup
 
-stop packet capture
-![image](https://github.com/user-attachments/assets/d1114d41-eac3-42b4-8f6f-176bb7ef3ef2)
+#### 2.1 Create Storage Account
+- Navigate to Azure Portal Storage Accounts
+- Create a new storage account
+- Generate a blob container for storing network captures
 
-navigate to the storage created previously, and select storage browser, blob containers, network watcher logs
-![image](https://github.com/user-attachments/assets/eca65832-9bd5-4754-8c07-4f537025617b)
+#### 2.2 Configure Network Watcher
+- Access Network Watcher in Azure Portal
+- Select "Packet Capture" option
+- Choose target Virtual Machine
+- Configure capture parameters:
+  - Select Storage Account
+  - Set time limit (recommended: 300 seconds)
+  - Define capture filters (optional)
 
-download packet capture log
-![image](https://github.com/user-attachments/assets/1a48309b-5653-4434-8c8e-a61b56a961e8)
+### 3. Traffic Generation and Capture
 
-open wireshark and add downloaded file
-![image](https://github.com/user-attachments/assets/0543a81d-4104-4a78-819b-733ee6014b61)
+#### 3.1 Generate Network Traffic
+- Access Virtual Machine's public IP address
+- Open web browser
+- Load IIS default page
+- Perform basic interactions to generate network traffic
 
-now you can see the contents of the capture file
-![image](https://github.com/user-attachments/assets/260bebea-7ff2-4074-80f9-94b1959600dd)
+#### 3.2 Capture Network Packets
+- Return to Network Watcher
+- Stop packet capture
+- Verify capture status and size
 
-filter using the port 80 that was previously used to connect to the virtual machine. filter = (ip.addr eq **** and tcp.port eq 80)
-![image](https://github.com/user-attachments/assets/07380a3b-0d28-4d42-9966-d00229377d61)
+### 4. Packet Analysis with Wireshark
+
+#### 4.1 Download Capture File
+- Navigate to configured Storage Account
+- Access Storage Browser
+- Locate Network Watcher logs container
+- Download packet capture file
+
+#### 4.2 Wireshark Analysis
+- Open Wireshark
+- Load downloaded capture file
+- Apply filters for focused analysis
+  - Example filter: `(ip.addr == <VM_IP> and tcp.port == 80)`
+
+## Recommended Filters for Investigation
+
+- `http`: Display HTTP traffic
+- `dns`: Analyze DNS queries
+- `tcp.port == 80`: Web traffic
+- `tcp.port == 443`: HTTPS traffic
+
+## Security Considerations
+
+- Always use strong authentication
+- Implement least privilege access
+- Regularly update and patch systems
+- Monitor and log network activities
+
+🏁 Conclusion
+This network packet capture and analysis project bridges theoretical knowledge with practical cybersecurity skills. By leveraging Azure Network Watcher and Wireshark.
 
 
 
